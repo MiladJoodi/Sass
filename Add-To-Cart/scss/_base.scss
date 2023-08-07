@@ -1,0 +1,41 @@
+$color-orange: #f38630;
+
+$font-Poppins: "Poppins";
+
+$font-large: 35px;
+$font-medium: 18px;
+$font-light: 16px;
+$font-small: 14px;
+$font-title: 24px;
+
+$border-light: 1px solid #cacaca;
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    @include flexCenter;
+    justify-content: center;
+    // height: 100vh;
+    font-family: "Poppins";
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.5em;
+    background: linear-gradient(135deg, #69d2e7 0%, #a7dbd8 25%, #e0e4cc 46%, #e0e4cc 54%, #f38630 75%, #fa6900 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#69d2e7', endColorstr='#fa6900', GradientType=1);
+}
+hr{
+    width: 80%;
+    height: 0.5px;
+    border-color: rgba(black, 0.1);
+    margin: 10px;
+}
