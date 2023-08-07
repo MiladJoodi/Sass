@@ -1,0 +1,162 @@
+.container {
+    @include flexCenter;
+    justify-content: center;
+    max-width: 1300px;
+    width: 80%;
+    margin: 50px 0;
+}
+
+.box {
+    @include flexCenter;
+    width: 800px;
+    background-color: #ffffff;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.9);
+    padding: 35px 25px;
+    gap: 20px;
+}
+.box-title {
+    @include flexCenter;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+
+    &-header {
+        font-size: $font-large;
+        margin-bottom: 15px;
+    }
+    &-dec {
+        font-size: $font-medium;
+        font-weight: 300;
+        opacity: 0.9;
+    }
+    &-subDec {
+        font-size: $font-small;
+    }
+}
+
+.box-products {
+    @include flexCenter;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+    flex-wrap: wrap;
+
+    &-item {
+        @include flexCenter;
+        flex-direction: column;
+        justify-content: space-between;
+        border: $border-light;
+        border-radius: 5px;
+        padding: 10px;
+        width: 237px;
+        // height: 500px;
+        gap: 15px;
+        transition: all 0.2s ease;
+
+        &:hover {
+            transform: scale(1.05);
+            // transform: translateX(-5px);
+            margin: 0 10px;
+        }
+
+        &-img {
+            max-width: 210px;
+            height: 160px;
+            border-radius: 5px;
+            box-shadow: 0 0 12px -6px rgba(0, 0, 0, 0.9);
+            border: 1px solid #b1b1b1;
+        }
+        &-title {
+            font-size: $font-title;
+        }
+        &-dec {
+            font-size: $font-medium;
+        }
+        &-price {
+            font-size: $font-medium;
+            font-weight: 600;
+        }
+        &-btn {
+            @include flexCenter;
+            justify-content: center;
+            background-color: $color-orange;
+            padding: 10px 15px;
+            border: none;
+            outline: none;
+            border-radius: 20px;
+            transition: background 0.2s ease;
+            font-family: $font-Poppins;
+            font-size: $font-light;
+            margin-bottom: 15px;
+
+            &:hover {
+                background: #a7dbd8;
+                border-color: #69d2e7;
+                color: #000;
+                cursor: pointer;
+            }
+
+            &-icon {
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.box-cart {
+    @include flexCenter;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    border: $border-light;
+    padding: 25px;
+    border-radius: 5px;
+
+
+    &-header {
+        @extend .box-title-header;
+        font-weight: 500;
+    }
+    &-info {
+        width: 150px;
+        align-self: self-start;
+        font-size: $font-small;
+        text-align: justify;
+
+        &-title {
+            @include flexCenter;
+            justify-content: space-between;
+            border-bottom: $border-light;
+        }
+        &-list {
+            @include flexCenter;
+            flex-direction: column;
+            // justify-content: space-between;
+            @extend .box-cart-info-title;
+            
+            &-content{
+                @include flexCenter;
+                justify-content: space-between;
+                width: 100%;
+                opacity: 0.8;
+            }
+        }
+    }
+    &-total {
+        align-self: self-end;
+        position: relative;
+        @extend .box-cart-info;
+    }
+    &-buttons {
+        @include flexCenter;
+        gap: 25px;
+        align-self: self-end;
+        margin-top: 25px;
+    }
+}
